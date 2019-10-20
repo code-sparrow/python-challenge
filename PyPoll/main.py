@@ -12,7 +12,7 @@ with open(csv_path, newline="") as csv_file:
     #skip and store header
     header = next(csv_reader)
     
-    #initiate empty candidate_list
+    #initialize empty candidate_list for collecting unique names
     candidate_list = []
     
 #----Iterate over each row in the csv file to collect the needed list---
@@ -25,7 +25,7 @@ with open(csv_path, newline="") as csv_file:
             continue
         candidate_list.append(row[2])
 
-#----Initiate a count_list for the candidates, to keep track of vote counts in next loop
+#----Initialize a count_list for the candidates, to keep track of vote counts for each candidate
 count_list = [0] * len(candidate_list)
 
 #----Open the CSV again----(for vote counts)
@@ -35,7 +35,7 @@ with open(csv_path, newline="") as csv_file:
     #skip and store header
     header = next(csv_reader)
     
-    #go through rows in csv file again
+    #loop through rows in csv file again
     for row in csv_reader:
         
         #in each row, cycle through candidate names to check for match
